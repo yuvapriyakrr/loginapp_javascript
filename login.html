@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login_wrap">
+        <div class="login_form_wrap"> 
+            <form>
+                <h4>Login</h4>
+                <div id="user" class="form-group">      
+                    <label>User Name</label>
+                    <input type="text" id="username" class="form-control" onkeypress="myUser()">
+                    
+                    <div id="error" class="error"></div>
+                </div>
+                <div id="pwd" class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="passwrd" class="form-control" onkeypress="mypasswrd()">
+                    <div id="pwderror" class="error"></div>
+                </div>
+                <div class="links"> 
+                    <a href="/home/yuvapriya/yuva_rail/Registration/ForgotPwd.html">Forgot Password</a>
+                </div> 
+                <div class="buttons"></div>
+                <button type="submit"class="btn btn-primary" onclick="submitpg()">Login</button>
+                
+                <button type="button" class="btn cancel-btn" onclick="cancelReset()">Cancel</button>
+            </div>
+           </form>
+        </div>
+    </div> 
+
+    <script>
+
+            
+            
+        function myUser() {
+            var userInput = document.getElementById("username").value;
+            var errorDiv = document.getElementById("error"); 
+            
+            // username validation
+            if (userInput.length <=4) {
+                var text = "Username should be a minimum of 4 characters";
+                errorDiv.innerText = text;
+            } else {
+                errorDiv.innerText = ""; 
+            }
+
+            
+            
+        }function mypasswrd() {
+            var pwdInput = document.getElementById("passwrd").value;
+            var errorDivs = document.getElementById("pwderror");
+            var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+            //password matching pattern
+            if (!regex.test(pwdInput)) {
+                var text = "Password must be at least 6 characters long and contain at least one letter and one number";
+                errorDivs.innerText = text;
+            } else {
+                errorDivs.innerText = ""; 
+            }
+        }
+        function submitpg() {
+            var userInput = document.getElementById("username").value;
+            var errorDiv = document.getElementById("error"); 
+            var pwdInput = document.getElementById("passwrd").value;
+            var errorDivs = document.getElementById("pwderror");
+            if(userInput ===""){
+                var text = "Please enter the user";
+                errorDiv.innerText = text;
+
+            }
+            // else {
+            //     errorDiv.innerText = ""; 
+            // }
+           if ( pwdInput ===""){
+                var text = "Please enter the Password";
+                errorDivs.innerText = text;
+
+            }
+            // else {
+            //     errorDivs.innerText = ""; 
+            // }
+            else{window.location.replace("upload.html");}
+            
+}
+function cancelReset() {
+    var confirmAction = confirm("Are you sure you want to cancel?");
+
+            if (confirmAction) {
+    document.getElementById("username").value = "";
+    document.getElementById("passwrd").value = "";
+    errorDivs.innerText = "";
+    errorDiv.innerText = "";
+        }}
+    </script>
+</body>
+</html>

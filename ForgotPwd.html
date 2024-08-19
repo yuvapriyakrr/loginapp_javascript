@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+    background-color: hsl(200, 33%, 98%); /* Background color of the box */
+    padding: 20px 40px;        /* Padding inside the box */
+    border-radius: 8px;        /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+    border: 1px solid #ddd;    /* Light border around the box */
+    width: 100%;
+    max-width: 400px;          /* Limit the maximum width of the box */
+    margin: auto;              /* Center the box horizontally */
+}
+
+/* Optional: Center the box vertically and horizontally */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8f7; /* Light background for the entire page */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: rgb(72, 88, 224);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="email"] {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Additional Links */
+.message {
+    text-align: center;
+    margin-top: 20px;
+    margin-left:10px ;  
+    margin-right:80px ;
+}
+
+.message a {
+    color: #5573d6;
+    text-decoration: none;
+}
+
+.message a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Forgot Password</h2>
+        <form id="forgotPasswordForm">
+            <div id="pwd" class="form-group">
+                <label for="email">Enter your email address:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Send Reset Link</button>
+                <div id="emailerror" class="error"></div>
+            </div>
+        </form>
+        <div class="message">
+            <p>Remember your password? <a href="/home/yuvapriya/yuva_rail/Registration/login.html">Login here</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("forgotPasswordForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            var emailInput = document.getElementById("email").value;
+            var errorDiv = document.getElementById("emailerror");
+            var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            
+            if (!regex.test(emailInput)) {
+                errorDiv.innerText = "Email is not in a proper format.";
+            } else {
+                errorDiv.innerText = "";
+
+               
+                alert("Reset link sent to your email.");
+                window.location.href = "file:///home/yuvapriya/yuva_rail/Registration/login.html"; 
+            }
+        });
+    </script>
+</body>
+</html>

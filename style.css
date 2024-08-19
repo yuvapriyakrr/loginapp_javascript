@@ -1,0 +1,64 @@
+html,
+body{
+
+    padding:o;
+    margin:0;
+    background-color: rgba(82, 115, 189, 0.226);
+}
+
+h4{
+    padding:0;
+    margin:0;
+    font-size: 25px;
+    font-family: "Gupter", serif;
+    text-align: center;
+    color: rgb(73, 75, 223);
+
+}
+.container {
+    background-color: rgb(212, 91, 91);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+a:hover {
+    text-decoration: underline;
+}
+.login_wrap{height:100vh;display:flex;align-items:center;justify-content: center;}
+.login_wrap .login_form_wrap{background-color: #fff;padding:35px;width: 300px;}
+.login_wrap .login_form_wrap label{display:block;font-size: 14px;padding-bottom:5px;}
+.login_wrap .login_form_wrap .form-group{padding-top: 20px;}
+.login_wrap .login_form_wrap .form-group input{box-sizing:border-box;height: 30px;padding: 0px 5px;width: 200px;}
+
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+.btn-primary {
+    width: 100px;
+    margin-top: 10px;
+    height: 25px;
+    margin-left: 40px;
+}
+
+.cancel-btn {
+    background-color: #f44336; /* Red background for Cancel button */
+    color: white;
+    width: 100px;
+    margin-top: 10px;
+    height: 25px;
+    margin-left: 10px; /* Adjust margin-left to align buttons properly */
+}
+
+.cancel-btn:hover {
+    background-color: #e53935;
+}
+
+.buttons {
+    display: flex; /* Align buttons in a row */
+    justify-content: flex-start; /* Align buttons to the left */
+    align-items: center; /* Center align vertically */
+}
